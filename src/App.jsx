@@ -5,8 +5,10 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-//import ImportContactsIcon from '@mui/icons-material/ImportContacts';
+import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import myImage from './assets/download.png';
+import { BarChart } from '@mui/x-charts/BarChart';
+
 import './App.css'
 
 const style = {
@@ -77,7 +79,14 @@ function App() {
             Nome:{nome} <br></br>
             Email:{email}
           </Typography>
-          <img src={myImage}></img>
+          <img src={myImage} width="60" height="80"></img>
+          <ImportContactsIcon />
+          <BarChart
+      xAxis={[{ scaleType: 'band', data: ['group A', 'group B', 'group C'] }]}
+      series={[{ data: [4, 3, 5] }, { data: [1, 6, 3] }, { data: [2, 5, 6] }]}
+      width={400}
+      height={200}
+    />
         </Box>
       </Modal>
 
